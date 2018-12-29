@@ -12,6 +12,7 @@ import sublime
 import sublime_plugin
 import difflib
 import codecs
+import os
 
 DEFAULT_MAX_FILE_SIZE = 1048576
 DEFAULT_IS_ENABLED = True
