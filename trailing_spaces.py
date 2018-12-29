@@ -14,6 +14,7 @@ import difflib
 import codecs
 from os.path import isfile
 
+
 DEFAULT_MAX_FILE_SIZE = 1048576
 DEFAULT_IS_ENABLED = True
 DEFAULT_MODIFIED_LINES_ONLY = False
