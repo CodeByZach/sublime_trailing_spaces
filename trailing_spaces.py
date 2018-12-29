@@ -12,7 +12,7 @@ import sublime
 import sublime_plugin
 import difflib
 import codecs
-import os
+from os.path import isfile
 
 DEFAULT_MAX_FILE_SIZE = 1048576
 DEFAULT_IS_ENABLED = True
@@ -439,7 +439,7 @@ class TrailingSpacesListener(sublime_plugin.EventListener):
         # view has a path, it might not be a real path. That's the case for
         # files read from packages using sublime.load_resource() API.
         file_name = view.file_name()
-        if file_name and os.path.isfile(file_name):
+        if file_name and isfile(file_name):
             on_disk = codecs.open(file_name, "r", "utf-8").read().splitlines()
 
 
