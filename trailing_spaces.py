@@ -43,13 +43,10 @@ def plugin_loaded():
 	global DEFAULT_COLOR_SCOPE_NAME, on_disk, trailing_spaces_syntax_ignore
 
 	ts_settings = sublime.load_settings(ts_settings_filename)
-	trailing_spaces_live_matching = bool(ts_settings.get("trailing_spaces_enabled",
-										 DEFAULT_IS_ENABLED))
-	current_highlighting_scope = ts_settings.get("trailing_spaces_highlight_color",
-												 "invalid")
+	trailing_spaces_live_matching = bool(ts_settings.get("trailing_spaces_enabled", DEFAULT_IS_ENABLED))
+	current_highlighting_scope = ts_settings.get("trailing_spaces_highlight_color", "invalid")
 	DEFAULT_COLOR_SCOPE_NAME = current_highlighting_scope
-	trim_modified_lines_only = bool(ts_settings.get("trailing_spaces_modified_lines_only",
-													DEFAULT_MODIFIED_LINES_ONLY))
+	trim_modified_lines_only = bool(ts_settings.get("trailing_spaces_modified_lines_only", DEFAULT_MODIFIED_LINES_ONLY))
 	trailing_spaces_syntax_ignore = ts_settings.get('trailing_spaces_syntax_ignore', [])
 
 	if trailing_spaces_live_matching:
@@ -90,10 +87,8 @@ def is_find_results(view):
 def find_trailing_spaces(view):
 	sel = view.sel()[0]
 	line = view.line(sel.b)
-	include_empty_lines = bool(ts_settings.get("trailing_spaces_include_empty_lines",
-											   DEFAULT_IS_ENABLED))
-	include_current_line = bool(ts_settings.get("trailing_spaces_include_current_line",
-												DEFAULT_IS_ENABLED))
+	include_empty_lines = bool(ts_settings.get("trailing_spaces_include_empty_lines", DEFAULT_IS_ENABLED))
+	include_current_line = bool(ts_settings.get("trailing_spaces_include_current_line", DEFAULT_IS_ENABLED))
 	regexp = ts_settings.get("trailing_spaces_regexp") + "$"
 	no_empty_lines_regexp = "(?<=\S)%s$" % regexp
 
@@ -174,11 +169,7 @@ def max_size_exceeded(view):
 # Returns nothing.
 def add_trailing_spaces_regions(view, regions):
 	view.erase_regions('TrailingSpacesMatchedRegions')
-	view.add_regions('TrailingSpacesMatchedRegions',
-					 regions,
-					 "",
-					 "",
-					 sublime.HIDE_ON_MINIMAP)
+	view.add_regions('TrailingSpacesMatchedRegions', regions, "", "", sublime.HIDE_ON_MINIMAP)
 
 
 # Private: Highlights specified regions as trailing spaces.
@@ -191,11 +182,7 @@ def add_trailing_spaces_regions(view, regions):
 # Returns nothing.
 def highlight_trailing_spaces_regions(view, regions):
 	view.erase_regions("TrailingSpacesHighlightedRegions")
-	view.add_regions('TrailingSpacesHighlightedRegions',
-					 regions,
-					 current_highlighting_scope or "",
-					 "",
-					 sublime.HIDE_ON_MINIMAP)
+	view.add_regions('TrailingSpacesHighlightedRegions', regions, current_highlighting_scope or "", "", sublime.HIDE_ON_MINIMAP)
 
 
 # Private: Toggles highlighting of all trailing spaces in the view.
@@ -463,8 +450,7 @@ class DeleteTrailingSpacesCommand(sublime_plugin.TextCommand):
 			and not ts_settings.get("trailing_spaces_trim_on_save"):
 				sublime.set_timeout(lambda: self.save(self.view), 10)
 
-			msg_parts = {"nbRegions": deleted,
-						 "plural":    's' if deleted > 1 else ''}
+			msg_parts = {"nbRegions": deleted, "plural":    's' if deleted > 1 else ''}
 			message = "Deleted %(nbRegions)s trailing spaces region%(plural)s" % msg_parts
 		else:
 			message = "No trailing spaces to delete!"

@@ -54,18 +54,29 @@
 						[
 							{
 								"caption": "Settings",
-								"command": "edit_settings", "args": {
+								"command": "edit_settings",
+								"args":
+								{
 									"base_file": "${packages}/TrailingSpaces/trailing_spaces.sublime-settings",
 									"default": "{\n$0\n}\n"
 								}
 							},
 							{ "caption": "-" },
 							{
-								"caption": "README",
-								"command": "open_file", "args":
+								"caption": "Context Menu",
+								"command": "trailing_spaces_edit_settings",
+								"args":
 								{
-									"file": "${packages}/TrailingSpaces/README.md"
+									"base_file": "${packages}/Trailing Spaces/Context.sublime-menu",
+									"user_file": "${packages}/User/Trailing Spaces/Context.sublime-menu",
+									"default": "[\n$0\n]\n"
 								}
+							},
+							{ "caption": "-" },
+							{
+								"caption": "README",
+								"command": "open_file",
+								"args": { "file": "${packages}/TrailingSpaces/README.md" }
 							}
 						]
 					}
