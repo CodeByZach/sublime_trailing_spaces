@@ -54,22 +54,79 @@
 						[
 							{
 								"caption": "Settings",
-								"command": "edit_settings",
+								"command": "z_edit_settings",
 								"args":
 								{
 									"base_file": "${packages}/TrailingSpaces/trailing_spaces.sublime-settings",
-									"default": "{\n$0\n}\n"
+									"user_file": "${packages}/User/TrailingSpaces/trailing_spaces.sublime-settings",
+									"default": "{\n\t$0\n}\n"
 								}
 							},
 							{ "caption": "-" },
 							{
-								"caption": "Context Menu",
-								"command": "trailing_spaces_edit_settings",
+								"caption": "Key Bindings",
+								"command": "z_edit_settings",
 								"args":
 								{
-									"base_file": "${packages}/Trailing Spaces/Context.sublime-menu",
-									"user_file": "${packages}/User/Trailing Spaces/Context.sublime-menu",
-									"default": "[\n$0\n]\n"
+									"base_file": "${packages}/TrailingSpaces/Default (${platform}).sublime-keymap",
+									"default": "[\n\t$0\n]\n"
+								}
+							},
+							{ "caption": "-" },
+							{
+								"caption": "Menus",
+								"children":
+								[
+									{
+										"caption": "Context Menu",
+										"command": "z_edit_settings",
+										"args":
+										{
+											"file": "${packages}/TrailingSpaces/Context.sublime-menu",
+											"is_parent_setting": "1",
+											"contents": "[\n\t$0\n]\n"
+										}
+									},
+									{
+										"caption": "Side Bar Menu",
+										"command": "z_edit_settings",
+										"args":
+										{
+											"file": "${packages}/TrailingSpaces/Side Bar.sublime-menu",
+											"is_parent_setting": "1",
+											"contents": "[\n\t$0\n]\n"
+										}
+									},
+									{
+										"caption": "Tab Menu",
+										"command": "z_edit_settings",
+										"args":
+										{
+											"file": "${packages}/TrailingSpaces/Tab Context.sublime-menu",
+											"is_parent_setting": "1",
+											"contents": "[\n\t$0\n]\n"
+										}
+									},
+									{
+										"caption": "Main Menu",
+										"command": "z_edit_settings",
+										"args":
+										{
+											"file": "${packages}/TrailingSpaces/Main.sublime-menu",
+											"is_parent_setting": "1",
+											"contents": "[\n\t$0\n]\n"
+										}
+									}
+								]
+							},
+							{
+								"caption": "Commands",
+								"command": "z_edit_settings",
+								"args":
+								{
+									"file": "${packages}/TrailingSpaces/Default.sublime-commands",
+									"is_parent_setting": "1",
+									"default": "[\n\t$0\n]\n"
 								}
 							},
 							{ "caption": "-" },
