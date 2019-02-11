@@ -11,7 +11,7 @@
 				"children":
 				[
 					{
-						"caption": "Trailing Spaces",
+						"caption": "TrailingSpaces",
 						"id": "trailing-spaces",
 						"children":
 						[
@@ -49,16 +49,15 @@
 				"children":
 				[
 					{
-						"caption": "Trailing Spaces",
+						"caption": "TrailingSpaces",
 						"children":
 						[
 							{
 								"caption": "Settings",
-								"command": "z_edit_settings",
+								"command": "edit_settings",
 								"args":
 								{
-									"base_file": "${packages}/TrailingSpaces/trailing_spaces.sublime-settings",
-									"user_file": "${packages}/User/TrailingSpaces/trailing_spaces.sublime-settings",
+									"base_file": "${packages}/TrailingSpaces/TrailingSpaces.sublime-settings",
 									"default": "{\n\t$0\n}\n"
 								}
 							},

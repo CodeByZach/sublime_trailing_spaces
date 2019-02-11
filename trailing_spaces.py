@@ -25,7 +25,7 @@ DEFAULT_MODIFIED_LINES_ONLY = False
 # Global settings object and flags.
 # Flags duplicate some of the (core) JSON settings, in case the settings file has
 # been corrupted or is empty (ST2 really dislikes that!)
-ts_settings_filename = "trailing_spaces.sublime-settings"
+ts_settings_filename = "TrailingSpaces.sublime-settings"
 ts_settings = None
 trailing_spaces_live_matching = DEFAULT_IS_ENABLED
 trim_modified_lines_only = DEFAULT_MODIFIED_LINES_ONLY
