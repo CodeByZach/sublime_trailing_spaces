@@ -81,9 +81,9 @@
 										"command": "z_edit_settings",
 										"args":
 										{
-											"file": "${packages}/TrailingSpaces/Context.sublime-menu",
 											"is_parent_setting": "1",
-											"contents": "[\n\t$0\n]\n"
+											"base_file": "${packages}/TrailingSpaces/Context.sublime-menu",
+											"default": "[\n\t$0\n]\n"
 										}
 									},
 									{
@@ -91,9 +91,9 @@
 										"command": "z_edit_settings",
 										"args":
 										{
-											"file": "${packages}/TrailingSpaces/Side Bar.sublime-menu",
 											"is_parent_setting": "1",
-											"contents": "[\n\t$0\n]\n"
+											"base_file": "${packages}/TrailingSpaces/Side Bar.sublime-menu",
+											"default": "[\n\t$0\n]\n"
 										}
 									},
 									{
@@ -101,9 +101,9 @@
 										"command": "z_edit_settings",
 										"args":
 										{
-											"file": "${packages}/TrailingSpaces/Tab Context.sublime-menu",
 											"is_parent_setting": "1",
-											"contents": "[\n\t$0\n]\n"
+											"base_file": "${packages}/TrailingSpaces/Tab Context.sublime-menu",
+											"default": "[\n\t$0\n]\n"
 										}
 									},
 									{
@@ -111,9 +111,9 @@
 										"command": "z_edit_settings",
 										"args":
 										{
-											"file": "${packages}/TrailingSpaces/Main.sublime-menu",
 											"is_parent_setting": "1",
-											"contents": "[\n\t$0\n]\n"
+											"base_file": "${packages}/TrailingSpaces/Main.sublime-menu",
+											"default": "[\n\t$0\n]\n"
 										}
 									}
 								]
@@ -123,8 +123,8 @@
 								"command": "z_edit_settings",
 								"args":
 								{
-									"file": "${packages}/TrailingSpaces/Default.sublime-commands",
 									"is_parent_setting": "1",
+									"base_file": "${packages}/TrailingSpaces/Default.sublime-commands",
 									"default": "[\n\t$0\n]\n"
 								}
 							},
