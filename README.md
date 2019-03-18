@@ -1,7 +1,7 @@
 Trailing Spaces
 ===============
 
-A [Sublime Text 2](http://www.sublimetext.com/2) and
+A [Sublime Text 2](https://www.sublimetext.com/2) and
 [3](http://www.sublimetext.com/3) plugin that allows you to…
 
 **highlight trailing spaces and delete them in a flash!**
@@ -44,7 +44,7 @@ Installation
 ------------
 
 It is available through
-[Sublime Package Control](http://wbond.net/sublime_packages/package_control) and
+[Sublime Package Control](https://packagecontrol.io) and
 this is the recommended way of installation (brings configuration instructions,
 automatic updates with changelogs…).
 
@@ -62,11 +62,11 @@ just that. Go to your `Packages` subdirectory under ST2's data directory:
 
 Then clone this repository:
 
-    git clone git://github.com/SublimeText/TrailingSpaces.git
+    git clone git://github.com/EatBreatheCode/sublime_trailing_spaces.git
 
 #### Manually
 
-[Download](https://github.com/SublimeText/TrailingSpaces/archive/master.zip)
+[Download](https://github.com/EatBreatheCode/sublime_trailing_spaces/archive/master.zip)
 the plugin as a zip. Copy the *Trailing Spaces* directory to its location
 (see prior section).
 
