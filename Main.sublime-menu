@@ -1,123 +1,143 @@
 [
-    {
-        "id": "edit",
-        "children":
-        [
-            {
-                "caption": "Trailing Spaces",
-                "id": "trailing-spaces",
-                "children":
-                [
-                    {
-                        "command": "delete_trailing_spaces",
-                        "caption": "Delete"
-                    },
-                    { "caption": "-" },
-                    {
-                        "command": "toggle_trailing_spaces_modified_lines_only",
-                        "caption": "Modified Lines Only",
-                        "checkbox": true
-                    },
-                    {
-                        "command": "toggle_trailing_spaces",
-                        "caption": "Highlight Regions",
-                        "checkbox": true
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": "preferences",
-        "children":
-        [
-            {
-                "caption": "Package Settings",
-                "mnemonic": "P",
-                "id": "package-settings",
-                "children":
-                [
-                    {
-                        "caption": "Trailing Spaces",
-                        "children":
-                        [
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/TrailingSpaces/README.md",
-                                    "platform": "Windows"
-                                },
-                                "caption": "Help"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/TrailingSpaces/README.md",
-                                    "platform": "OSX"
-                                },
-                                "caption": "Help"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/TrailingSpaces/README.md",
-                                    "platform": "Linux"
-                                },
-                                "caption": "Help"
-                            },
-                            { "caption": "-" },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/TrailingSpaces/trailing_spaces.sublime-settings",
-                                    "platform": "Windows"
-                                },
-                                "caption": "Settings - Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/TrailingSpaces/trailing_spaces.sublime-settings",
-                                    "platform": "OSX"
-                                },
-                                "caption": "Settings - Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/TrailingSpaces/trailing_spaces.sublime-settings",
-                                    "platform": "Linux"
-                                },
-                                "caption": "Settings - Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/User/trailing_spaces.sublime-settings",
-                                    "platform": "Windows"
-                                },
-                                "caption": "Settings - User"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/User/trailing_spaces.sublime-settings",
-                                    "platform": "OSX"
-                                },
-                                "caption": "Settings - User"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/User/trailing_spaces.sublime-settings",
-                                    "platform": "Linux"
-                                },
-                                "caption": "Settings - User"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
+	{
+		"caption": "Tools",
+		"mnemonic": "T",
+		"id": "tools",
+		"children":
+		[
+			{
+				"id": "packages",
+				"caption": "Packages",
+				"children":
+				[
+					{
+						"caption": "TrailingSpaces",
+						"id": "trailing-spaces",
+						"children":
+						[
+							{
+								"command": "delete_trailing_spaces",
+								"caption": "Delete"
+							},
+							{ "caption": "-" },
+							{
+								"command": "toggle_trailing_spaces_modified_lines_only",
+								"caption": "Modified Lines Only",
+								"checkbox": true
+							},
+							{
+								"command": "toggle_trailing_spaces",
+								"caption": "Highlight Regions",
+								"checkbox": true
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		"caption": "Preferences",
+		"mnemonic": "n",
+		"id": "preferences",
+		"children":
+		[
+			{
+				"caption": "Package Settings",
+				"mnemonic": "P",
+				"id": "package-settings",
+				"children":
+				[
+					{
+						"caption": "TrailingSpaces",
+						"children":
+						[
+							{
+								"caption": "Settings",
+								"command": "edit_settings",
+								"args":
+								{
+									"base_file": "${packages}/TrailingSpaces/TrailingSpaces.sublime-settings",
+									"default": "{\n\t$0\n}\n"
+								}
+							},
+							{ "caption": "-" },
+							{
+								"caption": "Key Bindings",
+								"command": "z_edit_settings",
+								"args":
+								{
+									"base_file": "${packages}/TrailingSpaces/Default (${platform}).sublime-keymap",
+									"default": "[\n\t$0\n]\n"
+								}
+							},
+							{ "caption": "-" },
+							{
+								"caption": "Menus",
+								"children":
+								[
+									{
+										"caption": "Context Menu",
+										"command": "z_edit_settings",
+										"args":
+										{
+											"is_parent_setting": "1",
+											"base_file": "${packages}/TrailingSpaces/Context.sublime-menu",
+											"default": "[\n\t$0\n]\n"
+										}
+									},
+									{
+										"caption": "Side Bar Menu",
+										"command": "z_edit_settings",
+										"args":
+										{
+											"is_parent_setting": "1",
+											"base_file": "${packages}/TrailingSpaces/Side Bar.sublime-menu",
+											"default": "[\n\t$0\n]\n"
+										}
+									},
+									{
+										"caption": "Tab Menu",
+										"command": "z_edit_settings",
+										"args":
+										{
+											"is_parent_setting": "1",
+											"base_file": "${packages}/TrailingSpaces/Tab Context.sublime-menu",
+											"default": "[\n\t$0\n]\n"
+										}
+									},
+									{
+										"caption": "Main Menu",
+										"command": "z_edit_settings",
+										"args":
+										{
+											"is_parent_setting": "1",
+											"base_file": "${packages}/TrailingSpaces/Main.sublime-menu",
+											"default": "[\n\t$0\n]\n"
+										}
+									}
+								]
+							},
+							{
+								"caption": "Commands",
+								"command": "z_edit_settings",
+								"args":
+								{
+									"is_parent_setting": "1",
+									"base_file": "${packages}/TrailingSpaces/Default.sublime-commands",
+									"default": "[\n\t$0\n]\n"
+								}
+							},
+							{ "caption": "-" },
+							{
+								"caption": "README",
+								"command": "open_file",
+								"args": { "file": "${packages}/TrailingSpaces/README.md" }
+							}
+						]
+					}
+				]
+			}
+		]
+	}
 ]
