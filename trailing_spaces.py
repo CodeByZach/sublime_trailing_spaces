@@ -128,9 +128,9 @@ def match_trailing_spaces(view):
 
 	if not is_find_results(view):
 		try:
-		(matched, highlightable) = find_trailing_spaces(view)
-		add_trailing_spaces_regions(view, matched)
-		highlight_trailing_spaces_regions(view, highlightable)
+			(matched, highlightable) = find_trailing_spaces(view)
+			add_trailing_spaces_regions(view, matched)
+			highlight_trailing_spaces_regions(view, highlightable)
 		except:
 			msg("Uncaught error while parsing document.")
 
