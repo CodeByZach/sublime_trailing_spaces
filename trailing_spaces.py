@@ -12,6 +12,7 @@ import sublime
 import sublime_plugin
 import difflib
 import codecs
+import re
 from os.path import isfile
 
 def msg(msg):
@@ -127,9 +128,9 @@ def match_trailing_spaces(view):
 
 	if not is_find_results(view):
 		try:
-			(matched, highlightable) = find_trailing_spaces(view)
-			add_trailing_spaces_regions(view, matched)
-			highlight_trailing_spaces_regions(view, highlightable)
+		(matched, highlightable) = find_trailing_spaces(view)
+		add_trailing_spaces_regions(view, matched)
+		highlight_trailing_spaces_regions(view, highlightable)
 		except:
 			msg("Uncaught error while parsing document.")
 
@@ -225,7 +226,7 @@ def clear_trailing_spaces_highlight(window):
 
 # Find edited lines since last save, as line numbers, based on diff.
 #
-# It uses a Differ object to compute the diff between the file as red on the
+# It uses a Differ object to compute the diff between the file as read on the
 # disk, and the current buffer (which may differ from the disk's state). See
 # http://docs.python.org/2/library/difflib.html for details about diff codes.
 #
@@ -434,10 +435,16 @@ class TrailingSpacesListener(sublime_plugin.EventListener):
 		file_name = view.file_name()
 		if file_name and isfile(file_name):
 			try:
-				on_disk = codecs.open(file_name, "r", "utf-8").read().splitlines()
+				encoding = "UTF-8"
+				# Try to see if the view has a different encoding that UTF-8
+				nested_encoding = re.search("\(([^\)]+)\)", view.encoding())
+				if nested_encoding:
+					encoding = nested_encoding.group(1)
+				on_disk = codecs.open(file_name, "r", encoding).read().splitlines()
 			except FileNotFoundError:
 				sublime.status_message('Unable to freeze last version; are you sure %s exists?' % file_name)
 				return
+
 
 # Public: Deletes the trailing spaces.
 class DeleteTrailingSpacesCommand(sublime_plugin.TextCommand):
