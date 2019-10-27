@@ -444,6 +444,9 @@ class TrailingSpacesListener(sublime_plugin.EventListener):
 			except FileNotFoundError:
 				sublime.status_message('Unable to freeze last version; are you sure %s exists?' % file_name)
 				return
+			except:
+				sublime.status_message('Unable to freeze last version.')
+				return
 
 
 # Public: Deletes the trailing spaces.
