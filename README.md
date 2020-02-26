@@ -85,14 +85,14 @@ deletion feature, you may either:
 To add a key binding, open "Preferences / Key Bindings - User" and add:
 
 ``` js
-{ "keys": ["ctrl+shift+t"], "command": "delete_trailing_spaces" }
+{ "keys": ["ctrl+t"], "command": "delete_trailing_spaces" }
 ```
 
-With this setting, pressing <kbd>Ctrl + Shift + t</kbd> will delete all
+With this setting, pressing <kbd>Ctrl + t</kbd> will delete all
 trailing spaces at once in the current file! For OSX users, quoting wbond:
 "When porting a key binding across OSes, it is common for the ctrl key on
 Windows and Linux to be swapped out for super on OS X"
-(eg. use "super+ctrl+t" instead).
+(eg. use "super+t" instead).
 
 *Beware*: the binding from this example overrides the default ST's mapping
 for reopening last closed file. You can look at the default bindings in

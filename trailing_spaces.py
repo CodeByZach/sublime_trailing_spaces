@@ -433,7 +433,7 @@ class TrailingSpacesListener(sublime_plugin.EventListener):
 		# view has a path, it might not be a real path. That's the case for
 		# files read from packages using sublime.load_resource() API.
 		file_name = view.file_name()
-		if file_name and isfile(file_name):
+		if file_name and isfile(file_name) and not view.is_scratch():
 			try:
 				encoding = "UTF-8"
 				# Try to see if the view has a different encoding that UTF-8
