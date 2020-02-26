@@ -1,0 +1,19 @@
+
+
+    Trailing Spaces update [v1.1.63]
+    -------------------------------
+
+    Hope you've been happy gaving trailin' a hard time so far.
+
+
+
+New feature: Keybindings
+================================
+
+With this setting, pressing "ctrl+t" will delete all
+trailing spaces at once in the current file! For macOS users, use "super+t" instead.
+
+Useful Links
+============
+
+* Documentation & Code: https://github.com/EatBreatheCode/sublime_trailing_spaces
