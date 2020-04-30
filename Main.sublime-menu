@@ -1,42 +1,5 @@
 [
 	{
-		"caption": "Tools",
-		"mnemonic": "T",
-		"id": "tools",
-		"children":
-		[
-			{
-				"id": "packages",
-				"caption": "Packages",
-				"children":
-				[
-					{
-						"caption": "TrailingSpaces",
-						"id": "trailing-spaces",
-						"children":
-						[
-							{
-								"command": "delete_trailing_spaces",
-								"caption": "Delete"
-							},
-							{ "caption": "-" },
-							{
-								"command": "toggle_trailing_spaces_modified_lines_only",
-								"caption": "Modified Lines Only",
-								"checkbox": true
-							},
-							{
-								"command": "toggle_trailing_spaces",
-								"caption": "Highlight Regions",
-								"checkbox": true
-							}
-						]
-					}
-				]
-			}
-		]
-	},
-	{
 		"caption": "Preferences",
 		"mnemonic": "n",
 		"id": "preferences",

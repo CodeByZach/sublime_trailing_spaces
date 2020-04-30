@@ -1,8 +1,7 @@
 Trailing Spaces
 ===============
 
-A [Sublime Text 2](https://www.sublimetext.com/2) and
-[3](http://www.sublimetext.com/3) plugin that allows you to…
+A [Sublime Text](http://www.sublimetext.com) plugin that allows you to…
 
 **highlight trailing spaces and delete them in a flash!**
 
@@ -115,9 +114,8 @@ Options
 
 Several options are available to customize the plugin's behavior. Those
 settings are stored in a configuration file, as JSON. You must use a specific
-file: Go to "Preferences / Package Settings / Trailing Spaces / Settings
-\- User" to add you custom settings. You can look at the default values in
-"Settings - Default", in the same menu.
+file: Go to "Preferences / Package Settings / Trailing Spaces / Settings" to
+add you custom settings.
 
 A few of them are also accessible through the "Edit / Trailing Spaces" menu.
 Sometimes, editing a setting will require a fresh Sublime Text to be applied
@@ -133,7 +131,7 @@ You may change the highlighting color, providing a color scope name such as
  "error", "comment"… just like that:
 
 ``` js
-{ "trailing_spaces_highlight_color": "comment" }
+{ "highlight_color": "comment" }
 ```
 
 The scope should be defined in your current theme file. Here is a dummy,
@@ -166,7 +164,7 @@ You can make trailing spaces "invisible" yet still rely on the deletion
 command. To do that, set the highlight scope to an empty string:
 
 ``` js
-{ "trailing_spaces_highlight_color": "" }
+{ "highlight_color": "" }
 ```
 
 Beware: this is **not** the same as *disabling* the highlighting (see "On-
@@ -183,7 +181,7 @@ each time you are about to start a new word, the space you type is matched as
 a trailing spaces. Currently edited line can thus be ignored:
 
 ``` js
-{ "trailing_spaces_include_current_line": false }
+{ "include_current_line": false }
 ```
 
 Even though the trailing spaces are not highlighted on this line, they are
@@ -197,7 +195,7 @@ When firing the deletion command, empty lines are matched as trailing regions,
 and end up being deleted. You can specifically ignore them:
 
 ``` js
-{ "trailing_spaces_include_empty_lines": false }
+{ "include_empty_lines": false }
 ```
 
 They will not be highlighted either.
@@ -218,7 +216,7 @@ regions. You may either:
 - specify as a setting:
 
 ``` js
-{ "trailing_spaces_modified_lines_only": true }
+{ "modified_lines_only": true }
 ```
 
 There is also a command to toggle this feature on and off. You may thus define
@@ -236,7 +234,7 @@ Setting this to `true` will ensure trailing spaces are deleted when you save
 your document. It abides by the other settings, such as *Modified Lines Only*.
 
 ``` js
-{ "trailing_spaces_trim_on_save": true }
+{ "trim_on_save": true }
 ```
 
 ### Save After Trim
@@ -248,7 +246,7 @@ around could prove useful. Setting this to `true` will automatically save your
 document after you fire the deletion command:
 
 ``` js
-{ "trailing_spaces_save_after_trim": true }
+{ "save_after_trim": true }
 ```
 
 It is obviously ignored if *Trim On Save* is on.
@@ -267,7 +265,7 @@ to cause slowness (for instance, you already installed several *heavy*
 plugins), you can disable live matching:
 
 ``` js
-{ "trailing_spaces_enabled": false }
+{ "enabled": false }
 ```
 
 In this case, for no trailing regions are matched until you request them to be
@@ -278,16 +276,22 @@ a binding for the toggling command. When "On-demand Matching" is on and some
 trailing spaces are highlighted, added ones will obviously not be. Toggling
 highlight off and on will refresh them.
 
-### Ignore Syntax
+### Ignore Scope
 
-*Default: []*
+*Default: ["text.find-in-files", "source.build_output", "source.diff"]*
 
-With this option you can ignore specific files/views based on the syntax used.
-An item has to match a case-sensitive substring of the syntax used in the view:
+With this option you can ignore lines being highlighted based on the scope of
+their trailing region.
+
+If at least one scope in the configured list matches a scope in the trailing
+region of the line, it won't be highlighted.
+
+By default, the scope under the mouse cursor is shown by pressing
+`Option+Command+P` (OS X) or `Ctrl+Alt+Shift+P` (Windows, Linux)
 
 ``` js
-// Views with a syntax that contains "Diff" are ignored
-{ "trailing_spaces_syntax_ignore": ["Diff"]}
+// Trailing spaces for find results, build output and markdown are ignored
+{ "scope_ignore": ["text.find-in-files", "source.build_output", "text.html.markdown"] }
 ```
 
 ### For power-users only!
@@ -299,7 +303,7 @@ The default threshold is around 1 million of characters. This is
 configurable (in "File Settings - User") and the unit is number of chars:
 
 ``` js
-{ "trailing_spaces_file_max_size": 1000}
+{ "file_max_size": 1000}
 ```
 
 #### The matching pattern
@@ -312,7 +316,7 @@ to abide by another definition to cover edge-cases, go ahead:
 
 ``` js
 // *danger* will match newline chars and many other folks
-"trailing_spaces_regexp": "[\\s]+"
+"regexp": "[\\s]+"
 ```
 
 About Sublime Text's built-in features
@@ -322,7 +326,7 @@ Trailing Spaces is designed to be a drop-in replacement of the limited
 *Trim Whitespace On Save* built-in feature. ST is indeed able to delete
 trailing spaces upon saving files, and maybe that's all you need!
 
-In order to enable this behavior, edit "Preferences / Settings - User"
+In order to enable this behavior, edit "Preferences / Settings"
 to add the following:
 
 ``` js
