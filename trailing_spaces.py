@@ -174,8 +174,9 @@ def ignore_view(view):
 		return True
 
 	view_settings = view.settings()
+	view_syntax = view_settings.get('syntax')
 
-	if not view_settings.get('syntax') or view_settings.get('is_widget'):
+	if not view_syntax or view_settings.get('is_widget'):
 		return False
 
 	for syntax_ignore in settings['syntax_ignore']:
@@ -376,36 +377,36 @@ def delete_trailing_regions(view, edit):
 		return 0
 
 
-# # Public: Toggles the highlighting on or off.
-# class ToggleTrailingSpacesCommand(sublime_plugin.WindowCommand):
-# 	def run(self):
-# 		view = self.window.active_view()
-# 		if max_size_exceeded(view):
-# 			sublime.status_message("File is too big, trailing spaces handling disabled.")
-# 			return
+# Public: Toggles the highlighting on or off.
+class ToggleTrailingSpacesCommand(sublime_plugin.WindowCommand):
+	def run(self):
+		view = self.window.active_view()
+		if max_size_exceeded(view):
+			sublime.status_message("File is too big, trailing spaces handling disabled.")
+			return
 
-# 		state = toggle_highlighting(view)
-# 		settings['highlight_color'] = current_highlight_color
-# 		settings[0].save()
-# 		sublime.status_message('Highlighting of trailing spaces is %s' % state)
+		state = toggle_highlighting(view)
+		settings['highlight_color'] = current_highlight_color
+		settings[0].save()
+		sublime.status_message('Highlighting of trailing spaces is %s' % state)
 
-# 	def is_checked(self):
-# 		return current_highlight_color != ""
+	def is_checked(self):
+		return current_highlight_color != ""
 
 
-# # Public: Toggles "Modified Lines Only" mode on or off.
-# class ToggleTrailingSpacesModifiedLinesOnlyCommand(sublime_plugin.WindowCommand):
-# 	def run(self):
-# 		was_on = settings['modified_lines_only']
-# 		settings['modified_lines_only'] = not was_on
-# 		settings[0].save()
+# Public: Toggles "Modified Lines Only" mode on or off.
+class ToggleTrailingSpacesModifiedLinesOnlyCommand(sublime_plugin.WindowCommand):
+	def run(self):
+		was_on = settings['modified_lines_only']
+		settings['modified_lines_only'] = not was_on
+		settings[0].save()
 
-# 		message = "Let's trim trailing spaces everywhere" if was_on \
-# 				  else "Let's trim trailing spaces only on modified lines"
-# 		sublime.status_message(message)
+		message = "Let's trim trailing spaces everywhere" if was_on \
+				  else "Let's trim trailing spaces only on modified lines"
+		sublime.status_message(message)
 
-# 	def is_checked(self):
-# 		return settings['modified_lines_only']
+	def is_checked(self):
+		return settings['modified_lines_only']
 
 
 # Public: Matches and highlights trailing spaces on key events, according to the
