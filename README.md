@@ -4,7 +4,7 @@ Trailing Spaces
 
 A [Sublime Text](http://www.sublimetext.com) plugin that allows you to…
 
-**highlight trailing spaces and delete them in a flash!**
+**Highlight trailing spaces and delete them in a flash!**
 
 ---
 
