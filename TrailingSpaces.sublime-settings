@@ -33,10 +33,10 @@
 	"include_current_line" : true,
 
 	/*
-	 * By default, any lines in the Find Results Build output and Diff views are ignored
+	 * By default, any lines in the Find Results, Build output, Diff and Markdown views are ignored
 	 * Add scopes to this list if you need to ignore them.
 	 */
-	"scope_ignore": ["text.find-in-files", "source.build_output", "source.diff"],
+	"scope_ignore": ["text.find-in-files", "source.build_output", "source.diff", "text.html.markdown"],
 
 	/*
 	 * By default, trailing spaces are deleted within the whole document.
