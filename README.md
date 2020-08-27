@@ -1,5 +1,6 @@
 Trailing Spaces
 ===============
+[![Latest Release](https://img.shields.io/github/tag/EatBreatheCode/sublime_trailing_spaces.svg?label=version)](https://github.com/EatBreatheCode/sublime_trailing_spaces/releases)
 
 A [Sublime Text](http://www.sublimetext.com) plugin that allows you to…
 
