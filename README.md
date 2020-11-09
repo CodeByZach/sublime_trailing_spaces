@@ -1,6 +1,6 @@
 Trailing Spaces
 ===============
-[![Latest Release](https://img.shields.io/github/tag/EatBreatheCode/sublime_trailing_spaces.svg?label=version)](https://github.com/EatBreatheCode/sublime_trailing_spaces/releases)
+[![Latest Release](https://img.shields.io/github/tag/CodeByZach/sublime_trailing_spaces.svg?label=version)](https://github.com/CodeByZach/sublime_trailing_spaces/releases)
 
 A [Sublime Text](http://www.sublimetext.com) plugin that allows you to…
 
@@ -62,11 +62,11 @@ just that. Go to your `Packages` subdirectory under ST2's data directory:
 
 Then clone this repository:
 
-    git clone git://github.com/EatBreatheCode/sublime_trailing_spaces.git
+    git clone git://github.com/CodeByZach/sublime_trailing_spaces.git
 
 #### Manually
 
-[Download](https://github.com/EatBreatheCode/sublime_trailing_spaces/archive/master.zip)
+[Download](https://github.com/CodeByZach/sublime_trailing_spaces/archive/master.zip)
 the plugin as a zip. Copy the *Trailing Spaces* directory to its location
 (see prior section).
 

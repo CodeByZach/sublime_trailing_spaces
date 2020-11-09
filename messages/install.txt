@@ -12,7 +12,7 @@ Documentation
 Although the usage of this plugin is dead simple, it comes with several options. All
 details are available in the documentation, and you can read it by clicking on
 "Preferences / Package Settings / Trailing Spaces / Help", or in a prettier form, by
-browsing https://github.com/EatBreatheCode/sublime_trailing_spaces.
+browsing https://github.com/CodeByZach/sublime_trailing_spaces.
 
 Key Binding
 ===========
@@ -31,6 +31,6 @@ as it used to, head to the issues tracker (see links below) to report the proble
 Useful Links
 ============
 
-* Documentation & Code: https://github.com/EatBreatheCode/sublime_trailing_spaces
+* Documentation & Code: https://github.com/CodeByZach/sublime_trailing_spaces
 * Report issues / Request New Features / Roadmap: https://github.com/SublimeText/TrailingSpaces/issues
 * Follow me on twitter: @jdvauguet

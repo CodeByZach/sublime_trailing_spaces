@@ -16,4 +16,4 @@ trailing spaces at once in the current file! For macOS users, use "super+t" inst
 Useful Links
 ============
 
-* Documentation & Code: https://github.com/EatBreatheCode/sublime_trailing_spaces
+* Documentation & Code: https://github.com/CodeByZach/sublime_trailing_spaces
